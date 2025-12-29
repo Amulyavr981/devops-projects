@@ -33,9 +33,9 @@ pipeline {
       sh '''
         cd java-maven-sonar-argocd-helm-k8s/spring-boot-app
         mvn clean verify \
-          org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-          -Dsonar.host.url=${SONAR_URL} \
-          -Dsonar.login=${SONAR_AUTH_TOKEN}
+  org.sonarsource.scanner.maven:sonar-maven-plugin:5.5.0.6356:sonar \
+  -Dsonar.host.url=${SONAR_URL} \
+  -Dsonar.token=${SONAR_AUTH_TOKEN}
       '''
     }
   }
